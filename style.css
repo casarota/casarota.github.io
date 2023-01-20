@@ -24,6 +24,7 @@ header h1 {
 
 header nav {
   display: flex;
+  font-size: 1.3em;
 }
 
 header nav a {
