@@ -5,12 +5,16 @@ body {
 }
 
 header {
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+    position: fixed; /* Make the header stay in a fixed position */
+    top: 0; /* Position the header at the top of the page */
+    left: 0; /* Position the header at the left of the page */
+    width: 95%; /* Make the header take up the full width of the page */
+    z-index: 1; /* Make sure the header is on top of other elements */  background-color: #fff;
+    color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
 header h1 {
@@ -23,15 +27,27 @@ header nav {
 }
 
 header nav a {
-  color: #fff;
+  color: #222;
   text-decoration: none;
   margin-left: 20px;
 }
+
+.nav-menu {
+    display: flex; /* Use flexbox layout to align the menu items horizontally */
+}
+
+.nav-menu li {
+    list-style: none; /* Remove bullet points from list items */
+    margin-right: 10px; /* Add some space between menu items */
+}
+
 
 main {
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
+  margin-top: 170px; /* Add a top margin equal to the height of the header */
+
 }
 
 article {
@@ -55,4 +71,108 @@ footer {
   color: #fff;
   padding: 20px;
   text-align: center;
+}
+
+#carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  animation: slide 8s infinite;
+}
+
+.slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Create a grid with 2 columns */
+}
+
+.slide img {
+    width: 100%;
+    grid-column: 1 / 2; /* Place the image in the first column */
+}
+
+.slide-text {
+    padding: 10px;
+    color: black;
+    background: rgba(0, 0, 0, 0);
+    grid-column: 2 / 3; /* Place the text in the second column */
+}
+
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  font-size: 36px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  margin-top: -22px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+
+
+.container {
+  display: flex;
+}
+
+
+.center {
+  display: flex;
+  margin: auto;
+  width: 90%;
+  /*border: 3px solid green;*/
+  padding: 10px;
+  text-align: center;
+}
+
+.left-column {
+  flex: 1; /* Add this line to distribute the space within the container */
+  max-width: 100%;
+}
+
+.right-column {
+  flex: 1; /* Add this line to distribute the space within the container */
+  padding: 10px;
+  color: black;
+  background: rgba(0, 0, 0, 0);
+  align-items: center;
+
+}
+
+
+@media (max-width: 768px) { /* Change layout when screen size is below 768px */
+    .container {
+        flex-direction: column; /* Stack columns vertically */
+    }
+    .left-column, .right-column {
+        width: 100%; /* Make columns take up full width of screen */
+    }
+
+    img {
+        max-width: 100%; /* Reduce the width of the image */
+        align-items: center;
+        justify-content: center; /* Center the items (in this case, the image) horizontally */
+
+    }
+
+    .nav-menu {
+        display: none; /* Hide the navigation menu */
+    }
+    #menu-icon {
+        display: block; /* Show the menu icon */
+    }
+
 }
