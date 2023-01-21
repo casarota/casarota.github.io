@@ -2,10 +2,11 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 2vw; /* 2% of the viewport width */
 }
 
 header {
-    position: fixed; /* Make the header stay in a fixed position */
+    /*position: fixed; /* Make the header stay in a fixed position */
     top: 0; /* Position the header at the top of the page */
     left: 0; /* Position the header at the left of the page */
     width: 95%; /* Make the header take up the full width of the page */
@@ -14,7 +15,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 5px;
+    font-size: 20px/*2vw/*1.3em;*/
 }
 
 header h1 {
@@ -24,7 +26,8 @@ header h1 {
 
 header nav {
   display: flex;
-  font-size: 1.3em;
+  font-size: 20px/*2vw/*1.3em;*/
+
 }
 
 header nav a {
@@ -47,7 +50,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
-  margin-top: 170px; /* Add a top margin equal to the height of the header */
+  margin-top: 10px; /* Add a top margin equal to the height of the header */
 
 }
 
@@ -70,8 +73,11 @@ article h3 {
 footer {
   background-color: #333;
   color: #fff;
-  padding: 20px;
+  padding: 0px;
   text-align: center;
+  width: 100%;
+  font-size: 32px/*2vw; /* 2% of the viewport width */
+
 }
 
 #carousel {
@@ -152,7 +158,17 @@ footer {
   align-items: center;
 
 }
-
+@media (min-width: 600px) { /* Change layout when screen size is above 600px */
+    footer {
+        font-size: 31px;
+    }
+    header nav {
+        font-size: 40px;
+    }
+    body {
+        font-size: 40px;
+    }
+}
 
 @media (max-width: 768px) { /* Change layout when screen size is below 768px */
     .container {
@@ -175,5 +191,4 @@ footer {
     #menu-icon {
         display: block; /* Show the menu icon */
     }
-
 }
