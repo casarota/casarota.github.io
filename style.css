@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 2vw; /* 2% of the viewport width */
+  font-size: 1.5vw; /* 2% of the viewport width */
 }
 
 header {
@@ -51,8 +51,12 @@ main {
   flex-wrap: wrap;
   margin: 20px;
   margin-top: 10px; /* Add a top margin equal to the height of the header */
-
 }
+
+image-center {
+    width: 30%
+}
+
 
 article {
   background-color: #f4f4f4;
@@ -158,15 +162,18 @@ footer {
   align-items: center;
 
 }
-@media (min-width: 600px) { /* Change layout when screen size is above 600px */
+@media (max-width: 600px) { /* Change layout when screen size is above 600px */
     footer {
-        font-size: 31px;
+        font-size: 25px;
     }
     header nav {
-        font-size: 40px;
+        font-size: 35px;
     }
     body {
-        font-size: 40px;
+        font-size: 30px;
+    }
+    image-center {
+    width: 100%
     }
 }
 
